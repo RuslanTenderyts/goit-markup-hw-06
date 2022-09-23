@@ -111,10 +111,14 @@ body {
 .form-box {
   margin-bottom: 20px;
 }
-.form-field:focus-within .form-field  {
+.form-field:focus {
   color:  #2196F3;
   fill: #2196f3;
-  
+}
+.form-field-input:focus,
+.form-field-textarea:focus {
+  outline: none;
+  border: 1px solid #2196f3;
 }
 .form-titel {
   width: 100%;
@@ -127,7 +131,6 @@ body {
   color: #212121;
 }
 .form-field {
-  position: relative;
   display: flex;
   flex-direction: column;
   fill: #000;
@@ -137,21 +140,27 @@ body {
  .form-field:not(:last-child) {
   margin-bottom: 10px;
  }
- .form-field label {
+
+ .form-field-label {
   margin-bottom: 4px;
 }
+.form-field-input-wraper {
+  position: relative;
+  display: block;
+}
 .form-field-input {
+  width: 100%;
   padding: 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   cursor: pointer;
 }
-.form-field textarea {
+.form-field-textarea {
   resize: none;
   height: 120px;
   padding: 16px 12px;
   border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
+  border-radius: 4px; 
 
 }
 .form-field,
@@ -175,15 +184,16 @@ body {
 }
 .form-field-icon{
   position: absolute;
-  top: 30px;
+  top: 50%;
   left: 12px;
+  transform: translateY(-50%) ;
   display: inline-block;
   width: 18px;
   height: 18px;
   
 }
-.form-field:focus-within,
-.form-field:hover {
+.form-field:focus-within {
+  outline: none;
   color:  #2196F3;
   fill: #2196f3;
 }
@@ -217,6 +227,9 @@ body {
   background-color: transparent;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+}
+.form-checkbox:focus + .form-checkbox-icon {
+  border: 2px solid #2196f3;
 }
 .form-checkbox:checked + .form-checkbox-icon {
   border: none;
