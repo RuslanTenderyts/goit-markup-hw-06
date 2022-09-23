@@ -235,8 +235,15 @@ body {
   border: none;
   background-color: #2196F3;
 }
+.form-check-icon {
+  display: none;
+}
+.form-checkbox:checked + .form-checkbox-icon .form-check-icon {
+  display: block;
+}
 .checkbox-icon{
-  margin: 0;
+  width: 16px;
+  height: 15px;
 }
 .policy-contract {
   margin-left: 5px;
