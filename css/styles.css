@@ -33,6 +33,15 @@ body {
   letter-spacing: 0.03em;
   color: var(--second-dark-color);
 }
+
+.container  {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 /* modal-win */
 .backdrop {
   position: fixed;
@@ -43,9 +52,9 @@ body {
   opacity: 1;
   visibility: visible;
   background-color: rgba(15, 15, 15, 0.5);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+              visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
   visibility: hidden;
@@ -65,10 +74,8 @@ body {
   width: 528px;
   height: 581px;
   background: #FFFFFF;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-  
- 
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 .close {
   position: absolute;
@@ -82,45 +89,21 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   fill: #000;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, 
+              opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+              fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+}
+.close-icon {
+  width: 100%;
+  height: 100%;
 }
 .close:hover,
 .close:focus {
   fill: #2196f3;
 }
 
-
-.close-icon {
-  width: 100%;
-  height: 100%;
-}
-.container{
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.form {
-  margin-left: auto;
-  margin-right: auto;
-  width: 448px;
-}
-.form-box {
-  margin-bottom: 20px;
-}
-.form-field:focus {
-  color:  #2196F3;
-  fill: #2196f3;
-}
-.form-field-input:focus,
-.form-field-textarea:focus {
-  outline: none;
-  border: 1px solid #2196f3;
-}
-.form-titel {
-  width: 100%;
+.modal-form-titel {
   margin-bottom: 12px;
   text-align: center;
   font-weight: 700;
@@ -129,83 +112,120 @@ body {
   letter-spacing: 0.03em;
   color: #212121;
 }
-.form-field {
+.modal-form {
   display: flex;
   flex-direction: column;
-  fill: #000;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
- }
- .form-field:not(:last-child) {
+}
+.modal-form-field {
   margin-bottom: 10px;
- }
-
- .form-field-label {
-  margin-bottom: 4px;
 }
-.form-field-input-wraper {
-  position: relative;
+.modal-form-field-desc {
   display: block;
-}
-.form-field-input {
-  width: 100%;
-  padding: 12px 42px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  cursor: pointer;
-}
-.form-field-textarea {
-  resize: none;
-  height: 120px;
-  padding: 16px 12px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px; 
-}
-.form-field-textarea::placeholder{
-  font-family: 'Roboto';
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
-}
-
-.form-field,
-.form-field-policy {
-  width: 100%;
+  margin-bottom: 4px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-  color: var(--second-dark-color);
+  color: var(--second-dark-color)
 }
-.form-field-policy {
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-input:focus {
+  outline: none;
+  border-color: #2196F3;
+}
+
+.modal-form-input-wraper {
+  position: relative;
+  display: block;
+}
+.modal-form-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  fill: var(--main-dark-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:focus + .modal-form-input-icon {
+  fill: #2196f3;
+}
+
+.modal-form-message {
+  width: 448px;
+  height: 120px;
+  padding: 12px 16px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-message:focus {
+  outline: none;
+  border-color: #2196f3;
+}
+.modal-form-message::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-check-field {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
+}
 
-  font-size: 14px;
+.modal-form-check {
+  position: absolute;
+  appearance: none;
+}
+.modal-form-own-checkbox {
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-own-checkbox-icon {
+  display: none;
+}
+.modal-form-check:checked + .modal-form-own-checkbox {
+  border-color: transparent;
+  background-color: #2196F3;
+}
+.modal-form-check:checked + .modal-form-own-checkbox .modal-form-own-checkbox-icon {
+  display: block;
+}
+.modal-form-check:focus + .modal-form-own-checkbox {
+  border-color: #2196f3;
+}
+.modal-form-check-desc,
+.modal-form-check-contract {
+  font-weight: 400;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  cursor: pointer;
+  color: var(--second-dark-color);
 }
-.form-field-icon{
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%) ;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  
+.modal-form-check-contract {
+  color: #2196F3;
 }
-.form-field:focus-within {
-  outline: none;
-  color:  #2196F3;
-  fill: #2196f3;
-}
-.form-backdrop-btn {
+
+.modal-form-submit {
   display: block;
   width: 200px;
   height: 50px;
@@ -222,44 +242,10 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
-.form-checkbox {
-  appearance: none;
-}
-.form-checkbox-icon {
-  display: inline-block;
-  width: 16px;
-  height: 15px;
-  margin-right: 7px;
-  border: 2px solid #212121;
-  border-radius: 2px;
-  background-color: transparent;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-}
-.form-checkbox:focus + .form-checkbox-icon {
-  border: 2px solid #2196f3;
-}
-.form-checkbox:checked + .form-checkbox-icon {
-  border: none;
-  background-color: #2196F3;
-}
-.form-check-icon {
-  display: none;
-}
-.form-checkbox:checked + .form-checkbox-icon .form-check-icon {
-  display: block;
-}
-.checkbox-icon{
-  width: 11px;
-  height: 8px;
-}
-.policy-contract {
-  margin-left: 5px;
-  
-}
-.policy-contract-href {
-  color: #2196F3;
-}
+
+
+
 /* header */
 .header {
   border-bottom: 1px solid #ececec;
@@ -481,11 +467,9 @@ body {
 }
 .feature-thumb{
   position: relative;
-  
-  
 }
+
 .feature-description {
-  
   position: absolute;
   bottom: 0;
   left: 0;
@@ -494,16 +478,15 @@ body {
   align-items: center;
   width: 100%;
   height: 70px;
-    background: rgba(47, 48, 58, 0.8);
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.14;
-    text-align: center;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  
-    color: var(--mail-font-color);
 
+  background: rgba(47, 48, 58, 0.8);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--mail-font-color);
 }
 
 .team {
@@ -789,12 +772,12 @@ transform: translateY(0%);
   display: flex;
   align-items: flex-end;
 }
-.form-email {
+.footer-form-email {
    display: flex;
   flex-direction: column;
   
 }
-.form-email input {
+.footer-form-email input {
   padding-left: 16px;
   width: 358px;
   height: 50px;
@@ -832,7 +815,7 @@ border-radius: 4px;
   height: 24px;
   fill: var(--mail-font-color);
 }
-.email-subscribe,
+.footer-email-subscribe,
 .social-networks-titel {
   font-weight: 700;
   font-size: 14px;

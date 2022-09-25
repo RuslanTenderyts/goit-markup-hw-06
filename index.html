@@ -394,9 +394,9 @@
           </li>
         </ul>
       </div>
-      <div class="footer-form">
-      <div class="form-email">
-        <p class="email-subscribe">Підписатись на розсилку</p>
+      <form class="footer-form">
+      <div class="footer-form-email">
+        <p class="footer-email-subscribe">Підписатись на розсилку</p>
         <label>
           <input type="email" name="email"  placeholder="E-mail"> 
         </label>
@@ -406,7 +406,7 @@
         <use href="./images/sprite.svg#icon-send"></use>
       </svg>
     </button>
-  </div>
+    </form>
   </div>
   </footer>
 
@@ -417,71 +417,78 @@
             <use href="./images/sprite.svg#icon-close"></use>
           </svg>
         </button>
-        <form class="form">
+        
           
-          <p class="form-titel">Залиште свої дані, ми вам передзвонимо</p>
-          <div class="form-box">
-          <div class="form-field">
-            <label for="name" class="form-field-label">Ім'я</label>
-            <span class="form-field-input-wraper">
-            <input type="text" name="name" id="name" class="form-field-input" pattern="[a-zA-Zа-яА-ЯіІїЇ]+">
-             <svg aria-label="іконка персона" class="form-field-icon">
-              <use href="./images/sprite.svg#icon-person-form"></use>
-            </svg>
-          </span>
-          </div>
-
-          <div class="form-field">
-              <label for="tel" class="form-field-label">Телефон</label>
-              <span class="form-field-input-wraper">
+        <p class="modal-form-titel">Залиште свої дані, ми вам передзвонимо</p>
+        <form class="modal-form">
+          <label class="modal-form-field">
+            <span class="modal-form-field-desc">Ім'я</span>
+            <span class="modal-form-input-wraper">
               <input 
-                  type="tel" 
-                  name="tel"
-                  id="tel" 
-                  required
-                  autocomplete="off" 
-                  class="form-field-input" 
-                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" 
-                  title="xxx-xxx-xx-xx" >
-              <svg aria-label="іконка телефон" class="form-field-icon">
+                type="text"
+                name="name" 
+                class="modal-form-input" 
+                required
+                pattern="[a-zA-Zа-яА-ЯіІїЇ]+" />
+              <svg aria-label="іконка персона" class="modal-form-input-icon">
+                <use href="./images/sprite.svg#icon-person-form"></use>
+              </svg>
+            </span>
+          </label>
+                  
+          <label class="modal-form-field">
+            <span class="modal-form-field-desc">Телефон</span>
+            <span class="modal-form-input-wraper">
+              <input 
+                type="tel" 
+                name="tel"
+                required
+                autocomplete="off" 
+                class="modal-form-input" 
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" 
+                title="xxx-xxx-xx-xx" />
+              <svg aria-label="іконка телефон" class="modal-form-input-icon">
                 <use href="./images/sprite.svg#icon-phone-form"></use>
               </svg>
             </span>
-          </div>
-                    
-          <div class="form-field">
-              <label for="email" class="form-field-label">Пошта</label>
-              <span class="form-field-input-wraper">
-              <input type="text" name="email" id="email" required class="form-field-input">
-              <svg aria-label="іконка пошта" class="form-field-icon">
+          </label>
+        
+          <label class="modal-form-field">
+            <span class="modal-form-field-desc">Пошта</span>
+            <span class="modal-form-input-wraper">
+              <input 
+                type="text" 
+                name="email" 
+                required 
+                class="modal-form-input" />
+              <svg aria-label="іконка пошта" class="modal-form-input-icon">
                 <use href="./images/sprite.svg#icon-email-form"></use>
               </svg>
             </span>
-          </div>
-
-          <div class="form-field">
-            <label class="form-field-label" for="comment">Коментар</label>
-            <textarea name="comment" id="comment" class="form-field-textarea" placeholder="Ведіть текст"></textarea>
-        </div>
-      </div>
-
-        <label class="form-field-policy">
-            <input type="checkbox" name="policy" class="form-checkbox" required />
-            <span class="form-checkbox-icon">
-              <svg aria-label="іконка чекену" class="checkbox-icon" >
-                <use class="form-check-icon" href="./images/sprite.svg#icon-check"></use>
-              </svg>
-            </span>
-            Погоджуюсь з розсилкою та приймаю <span class="policy-contract"><a href="#" class="policy-contract-href">Умови договору</a></span>
           </label>
-        
 
-        <button class="form-backdrop-btn" type="submit" >Відправити</button>
-          </form>
+          <label class="modal-form-field">
+            <span class="modal-form-field-desc">Коментар</span>
+            <textarea name="comment" class="modal-form-message" placeholder="Ведіть текст"></textarea>
+          </label>
+      
+          <label class="modal-form-check-field">
+            <input 
+              type="checkbox" 
+              name="policy" 
+              class="modal-form-check" 
+              required />
+            <svg aria-label="іконка чекену" class="modal-form-own-checkbox" >
+                <use class="modal-form-own-checkbox-icon" href="./images/sprite.svg#icon-check"></use>
+              </svg>
+            <span class="modal-form-check-desc">Погоджуюсь з розсилкою та приймаю&nbsp; </span> <a href="#" class="modal-form-check-contract">Умови договору</a>
+          </label>
+      
+          <button class="modal-form-submit" type="submit" >Відправити</button>
+        </form>
       </div>
-      
-      
     </div>
+
     <script src="./js/modal.js"></script>
   </body>
 </html>
